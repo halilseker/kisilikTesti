@@ -1,0 +1,7 @@
+body{
+	position:relative;
+}
+#mainNavbar{
+	position:fixed;
+	top:20px;
+}

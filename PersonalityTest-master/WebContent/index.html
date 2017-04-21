@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Kişilik Testi</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body> 
+  
+     <div class="well">
+ <h1 style="text-align:center; ">Kişilik Testi Uygulaması</h1>
+</div>
+  
+  
+      <div class="container">
+      <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+     
+ 
+	    <div id="imageCarousel" class="carousel slide" data-interval="2000" data-ride="carousel" >
+   <ol class="carousel-indicators">
+   <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+   <li data-target="#imageCarousel" data-slide-to="1"></li>
+   <li data-target="#imageCarousel" data-slide-to="2"></li>
+   </ol>
+   <div class="carousel-inner">
+   <div class="item active">
+   <img src="images/slide1.jpg"  style="height:350px; width:900px;text-align:center;"/>
+   </div>
+   <div class="item">
+   <img src="images/slide2.jpg"  style="height:350px; width:900px; text-align:center;"/>
+   </div>
+   <div class="item ">
+   <img src="images/slide3.jpg"  style="height:350px; width:900px; text-align:center;"/>
+   </div>
+   </div>
+   </div>
+    <div class="soru_kismi">
+   <p style="text-align:center; font-size:40px;"> <span class="label label-default " ><b>Test Soruları</b></span></p>
+   </div>
+   <table class="table">
+ <caption class="giris" style="margin-right:-200px; margin-left:-200px;">Her sorunun altında bulunan 4 şık içerisinden 
+ size en uygun gelen sık için aşagidaki tabloya XX
+ ikinci uygun gelen seçenek için X koyunuz.Eğer tek şık işaretlemek isterseniz sadece o şıkka XX koyunuz.Test sonunda 
+ puanlarınız toplanacak ve test sonucunda karar verilen ilgili renginizin sayfasına yönlendirileceksiniz.Sizden sizin için yapılan 
+ analizleri ve tavsiyeleri okumanız beklenmektedir.
+  </caption>
+  </table>
+ <div class="panel panel-default" style="margin-right:-200px; margin-left:-200px;">
+<form action="new.jsp"> 
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>1-)Aşağıdaki beyitlerden hangisi sizi daha iyi anlatır?</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Güçlü kararlı,girişken ve doğuştan liderim 
+düşer kalkar yoluma devam ederim. 
+</br>
+<div class="btn-group">
+<button type="button" class="btn btn-default" name="bxSikki">X</button>
+<button type="button" class="btn btn-default" name="bxxSikki" value="2">XX</button>
+</div>&nbsp&nbsp&nbspB.Hayata anlamlı renkler katar eğlenceyi severim.Ömür boyu herkesin mutlu ve neşeli olmasını isterim.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default" value="1">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>&nbsp&nbsp&nbspC.Her anımı huzurlu ve sakin geçirmek isterim.Kavga gürültü sevmem işlerşide en kolay yolu seçerim. 
+</br><div class="btn-group">
+<button type="button" name="sayac" class="btn btn-default" value="10" >X</button>
+<button type="button" name="sayac2 "class="btn btn-default" value="20" >XX</button>
+</div>&nbsp&nbsp&nbspD.Herşeyin mükemmel, düzgün, kusursuz olmasını isterim
+ilişkilerimde saygılı ve mesafeli olmayı severim. 
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>2-)Genellikle hangi tempoda ve nasıl konuşursunuz?</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Hızlı ve sonuca yönelik.</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Çok hızlı,heyecanlı ve eğlenceli</br>
+<div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Daha yavaş ve sakin.</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Normal ve söleyeceklerimi aklımda tartarak.
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>3-)Bir işe motive olmanızı sağlayan en önemli unsur hangisidir?</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Sonuçları düşünmek.</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Onaylanmak,takdir edilmek</br>
+<div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Gruptaki arkadaşlarımın desteği</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Etkinlik,düzen ve disiplin
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>4-)Çalışma tarzınız hangisine uygundur?</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Yoğun ve hızlıyımdır.Aynı anda birkaş iş bir arada yapabilirim. </br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Özgür bir ortamda
+çalışırım.İnsan ilişkileri odaklıyımdır.</br>
+<div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Ön planda olmayan ama gruba her türlü desteği veren bir yapım vardır.</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Ayrıntıları 
+önemserim ve tek bir konuya odaklanarak çalışırım.
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>5-)Çalışma temponuzu nasıl değerlendiriyorsunuz?</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Hızlı bir tempoda çalışır,çabuk karar almayı severim. </br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.İşlerin, rutin ve sıkıcı olmadığı 
+ortamlarda yüksek motivasyonla çalışırım.</br>
+<div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Nadiren aceleyimdir.Geçte olsa üstlendiğim işi bitiririm.</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Ayrıntılı düşünerek karar 
+veririm.İş bitirici bir tempoyla çalışırım.
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>6-)Hangisi sizi daha çok raharsız eder?</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Zaman israfı ve işlerin gecikmesi. 
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Tekrar gerektiren işler ve monotonluk.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Çatışma ortamı ve anlaşmazlıklar.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Yanılmak ve yapılan hatanın tekrarlanması. 
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>7-)Bulunduğunuz gruplarda hangi konumda daha başarılı olursunuz?</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Olaylara yön veren ve otoriteyi kullanan. 
+</br><div class="btn-group">
+<button type="button"  class="btn btn-default">X</button>
+<button type="button"  class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.İnsanları motive eden ve neşelendiren.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Uzlaştırıcı ve grup içindeki uyumu sağlayan.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Bilgi sağlayıcı,araştırıcı ve olayları takip eden. 
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>8-)Hangisi sizi daha çok strese sokar?</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Olaylar üzerinde güç ve kontrolümün azaldığını hissetmek. 
+</br><div class="btn-group">
+<button type="button"  class="btn btn-default">X</button>
+<button type="button"  class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Sıkıcı,rutin işler yapılan bir ortamda bulunmak.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Beni aşacağını düşündüğüm sorumluluklar üstlenmek.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Düzensiz ortamlar ve eksik yapılan işler. 
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>9-)Bir öğrenci olsanız ve öğretmeniniz sınav kağıdınızı ikinci defa incelediğinde puanınızı artırdığını söylese, nasıl bir tepki verirsiniz?
+</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Bunu zaten hak ettiğimi düşünürüm
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Çok sevinirim ve sevincimi belli ederim.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Hocama teşekkür eder ve saygı duyarım.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Hocamın nerede hata yaptığını merak eder, kağıdımı görmek isterim. 
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>10-)Saatler sürecek bir iş toplantısına katılmanız gerektiğinde aşağıdakilerden hangisini benimsersiniz?
+</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Konunun ana hatlarının konuşulması için, sonucun belli olmasından hemen sonra çıkmayı tercih ederim.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Toplantı eğlenceli bir şekilde devam ettiğinde sonuna kadar kalmayı, sıkıcı olmaya başladığında erken çıkmayı tercih ederim.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Toplantının huzur içinde geçmesi ve güzel kararlar çıkması için üstüme düşeni yaparım.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Toplantıya vaktinden önce gelir, tüm detayları not eder ve bir değerlendirme yapmak için geç çıkarım. 
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>11-)Kendinizde gördüğünüz en zayıf yönünüz hangisidir?
+</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.İnsanlar işleri istediğim gibi yapmadığında ve seri olmadıklarında sinirlenmek
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Düzensiz, dağınık ve programsız olmak
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Kimseye hayır diyememek ve başkalarının işine koşarken kendi işimi aksatmak
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Her şeyin kusursuz ve mükemmel olmasını istemek, İnsanlar buna uymadığında sinirlenmek
+
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>12-)Kendinizde gördüğünüz en güçlü yönünüz hangisidir?
+</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Kısa sürede karar alan ve harekete geçen yapım
+</br><div class="btn-group">
+<button type="button" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Girdiğim ortamlara neşe ve heyecan katan tarafım
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Her türlü ortama uyum sağlama ve çatışmaları önleme gayretim
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Her şeyi planlı, programlı ve düzenli yapma huyum
+
+
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>13-)Aşağıdaki ifadelerden hangisi sizi daha iyi tanımlar?
+</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Güçlü, kararlı, otoriter ve yönlendirici
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Popüler, neşeli, sevimli ve muzip
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Barışçıl, sevecen, uyumlu ve sakin
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Tertipli, düzenli, disiplinli ve planlı
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>14-)Çalışma masanızda nelere dikkat edersiniz?
+</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Öncelik verdiğim şeyleri yapacak şekilde düzenlenmiş sade bir masayı tercih ederim.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.İnsanlara karma karışık gelen; ama benim aradığım her şeyi bulduğum bir masada çalışırım.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Önce masamın üzerine gerekli olan her türlü araç gereci koyarım. Sık sık kalkarak enerjimi harcamak istemem.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.İyi bir iş çıkarmam için masam son derece derli-toplu ve düzenli olmalıdır.
+
+</div>
+<div class="panel-heading">
+<h3 class="panel-title">
+<b>15-)Ertesi gün çözülmesi gereken bir problem varsa o
+akşamki ruh haliniz nasıl olur?
+
+</b>
+</h3>
+</div>
+<div class="panel-body" >
+<div class="btn-group">
+<button type="button" id="secAx" name="axSikki" onclick="hesaPuanAx()" class="btn btn-default">X</button>
+<button type="button" id="secAxx"name="axxSikki"onclick="hesaPuanAxx()" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspA.Çok büyük tedirginlik duymam; çünkü ertesi gün o işi olması gerektiği gibi yapacağımdan eminimdir.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspB.Çok tedirginlik duymam; çünkü nasıl olsa işler bir şekilde hallolacaktır.
+</br><div class="btn-group">
+<button type="button" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspC.Sorumluluğun üstümde olmasından dolayı tedirginlik duyarım.
+</br><div class="btn-group">
+<button type="button" onclick="myFonk()" id="soru15d" class="btn btn-default">X</button>
+<button type="button" class="btn btn-default">XX</button>
+</div>
+&nbsp&nbsp&nbspD.Tedirginlik duyarım ve gecenin büyük bir bölümünde problemin nasıl çözüleceğiyle ilgili planlar yaparım.
+
+<p id="pdurum">Gelenİfade</p>
+
+<button type="submit" >"Sonuç için Tıklayınız" </button>
+
+<p id="AxtoplamPuan">PuanlarAx</p>
+<p id="AXXtoplamPuan">PuanlarAxx</p>
+</form>
+<!-- https://www.w3schools.com/code/tryit.asp?filename=FETFPRKPLXB8 onclick ile referans aktarma -->
+	<script>
+		var axpuan=0;
+		var axxpuan=0;
+		var bisey;
+		function hesaPuanAx(){
+			//bisey=documen.getElementById("secAx").value;
+			//document.getElementById("pdurum").innerHTML=bisey;
+			
+			//if(documen.getElementById("secAx").value != null)//Tıklanan X mi? XX mi?
+				//{axpuan=axpuan+1;}
+			
+			//else if(documen.getElementById("secAxx").value==null)
+				//{axxpuan=axxpuan+2;}
+			axpuan = axpuan+1;
+			document.getElementById("AxtoplamPuan").innerHTML= axpuan;
+			document.getElementById("AXXtoplamPuan").innerHTML= axxpuan;
+		}
+		function hesaPuanAxx(){
+			
+			axxpuan = axxpuan+2;
+			document.getElementById("AxtoplamPuan").innerHTML= axpuan;
+			document.getElementById("AXXtoplamPuan").innerHTML= axxpuan;
+		}
+	
+	</script>
+	
+<script>
+	var x=0;
+	var y=0;
+	char z;
+	function myFonk(){
+		x++;
+		document.getElementById("pdurum").innerHTML=x;
+	
+	}
+
+</script>
+
+
+
+</div>
+<div class="panel-footer">
+<!-- Carousel nav -->
+
+<!-- Controls buttons -->
+<div style="text-align:center;">
+
+<ul class="pagination">
+<li><a href="#">&laquo;</a></li>
+<li><a href="#">1</a></li>
+<li><a href="#">2</a></li>
+<li><a href="#">3</a></li>
+
+<li><a href="#">&raquo;</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<table class="table">
+
+<thead> 
+<tr > 
+<th >Karakter</th> 
+<th>&nbsp1</th> 
+<th>&nbsp2</th> 
+<th>&nbsp3</th> 
+<th>&nbsp4</th> 
+<th>&nbsp5</th> 
+<th>&nbsp6</th> 
+<th>&nbsp7</th> 
+<th>&nbsp8</th> 
+<th>&nbsp9</th> 
+<th>&nbsp10</th> 
+<th>&nbsp11</th> 
+<th>&nbsp12</th> 
+<th>&nbsp13</th> 
+<th>&nbsp14</th> 
+<th>&nbsp15</th>
+<th>&nbspToplam</th> 
+</tr> </thead> 
+<tbody>
+ <tr class="danger">
+<td>Kırmızı</td>
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th>
+<th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp?</th>
+
+ </tr>
+  <tr class="warning"> 
+  <td>Sarı</td>
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th>
+<th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp?</th>
+
+</tr> 
+<tr class="success"> 
+<td>Yeşil</td>
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th>
+<th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp?</th>
+   </tr> 
+   <tr class=active> 
+   <td>Mavi</td>
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th> 
+<th></th>
+<th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp?</th>
+</tr> 
+</tbody> 
+</table>
+
+
+<div class="row" style="padding: 10px 10px 50px 50px;">
+ <div class="show" style="left-margin:50px;width:500px;background-color:#ccc;"> Bu test İnsan İlişkilerinde 4x4 lük iletişim adlı kitaptan alınmıştır </div></div>
+ </div>
+ </div>
+ </div>
+
+   
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    	$('#imageCarousel').carousel();
+    });
+    $(document).ready(function(){
+    	$('.carousel').carousel();
+    });
+    $(".prev-slide").click(function(){
+    	$("#myCarousel").carousel('prev');
+    	});
+    $(".next-slide").click(function(){
+    	$("#myCarousel").carousel('next');
+    	});
+  </body>
+</html>
