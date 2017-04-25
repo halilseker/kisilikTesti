@@ -1,12 +1,13 @@
 package degerlendirme;
 
 public class Yanitlar {
-	int sayac=0;
+	String axpuan;
 	//String gelyanit;
 	public Yanitlar() {
 		// TODO Auto-generated constructor stub
 		//gelyanit=null;
-		sayac++; //Yanitlar sınıfından her yeni oluşturulan nesne için sayac artacak(static olmasına dikkat) 
+		axpuan=null;
+		//Yanitlar sınıfından her yeni oluşturulan nesne için sayac artacak(static olmasına dikkat) 
 		
 	}
 	
@@ -19,11 +20,11 @@ public class Yanitlar {
 	}*/
 	
 	
-	public int getSayac() {
-		return sayac;
+	public String getSayac() {
+		return axpuan;
 	}
-	public void setSayac(int sayac) {
-		this.sayac=sayac;
+	public void setSayac(String axpuan) {
+		this.axpuan=axpuan;
 		//this.sayac =Integer.parseInt(sayac);
 		
 	}

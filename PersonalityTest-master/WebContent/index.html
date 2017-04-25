@@ -59,7 +59,7 @@
   </caption>
   </table>
  <div class="panel panel-default" style="margin-right:-200px; margin-left:-200px;">
-<form action="new.jsp"> 
+<form action="new.jsp" > 
 <div class="panel-heading">
 <h3 class="panel-title">
 <b>1-)Aşağıdaki beyitlerden hangisi sizi daha iyi anlatır?</b>
@@ -489,16 +489,16 @@ akşamki ruh haliniz nasıl olur?
 
 <p id="pdurum">Gelenİfade</p>
 
-<button type="submit" >"Sonuç için Tıklayınız" </button>
+<button id="tekSonuc" type="submit" name="hadiAl" >"Sonuç için Tıklayınız" </button>
 
 <p id="AxtoplamPuan">PuanlarAx</p>
 <p id="AXXtoplamPuan">PuanlarAxx</p>
-</form>
+
 <!-- https://www.w3schools.com/code/tryit.asp?filename=FETFPRKPLXB8 onclick ile referans aktarma -->
 	<script>
-		var axpuan=0;
-		var axxpuan=0;
-		var bisey;
+	var axpuan=0;
+	var axxpuan=0;	
+	
 		function hesaPuanAx(){
 			//bisey=documen.getElementById("secAx").value;
 			//document.getElementById("pdurum").innerHTML=bisey;
@@ -508,19 +508,30 @@ akşamki ruh haliniz nasıl olur?
 			
 			//else if(documen.getElementById("secAxx").value==null)
 				//{axxpuan=axxpuan+2;}
+		    
 			axpuan = axpuan+1;
 			document.getElementById("AxtoplamPuan").innerHTML= axpuan;
 			document.getElementById("AXXtoplamPuan").innerHTML= axxpuan;
+			//return axpuan;
+			Toplam(axpuan,axxpuan);
+			
 		}
 		function hesaPuanAxx(){
 			
 			axxpuan = axxpuan+2;
 			document.getElementById("AxtoplamPuan").innerHTML= axpuan;
 			document.getElementById("AXXtoplamPuan").innerHTML= axxpuan;
+			//return axxpuan;
+			Toplam(axpuan,axxpuan);
 		}
-	
+		
+		function Toplam(Axgelen,Axxgelen){
+			this.axpuan=Axgelen;
+			this.axxpuan=Axxgelen;
+			document.getElementById("tekSonuc").value=axpuan+axxpuan ; //Buton submit yaptığında gönderilecek değer
+		}
 	</script>
-	
+</form>
 <script>
 	var x=0;
 	var y=0;

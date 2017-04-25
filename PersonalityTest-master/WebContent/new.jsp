@@ -27,27 +27,22 @@ position:relative;
 
 <div class="panel panel-success" style=" margin-left:30px; margin-right:30px;">
 <div class="panel-heading">
-
+<%-- 
 			<jsp:useBean class="degerlendirme.Yanitlar" id="ilkCekirdek" scope="session"></jsp:useBean>
 		
 			
-			<jsp:setProperty name="ilkCekirdek" property="sayac"/>
-			Gelen Sayac:
-			<jsp:getProperty name="ilkCekirdek" property="sayac"/>
-			
-			
-			<jsp:useBean class="degerlendirme.Yanitlar" id="ikinciCekirdek" scope="session"></jsp:useBean>
-			<jsp:setProperty name="ikinciCekirdek" property="sayac" />
-			İkinci ÇEKİRDEK:
-			<jsp:getProperty name="ikinciCekirdek" property="sayac" />
-			
+			<jsp:setProperty name="ilkCekirdek" property="axpuan"/>
+			Gelen Sayac A'dan:
+			<jsp:getProperty name="ilkCekirdek" property="axpuan"/>
+		
+--%>			
 
 <%
-
+	
 	HttpSession oturum=request.getSession();
 
-	String apuan=request.getParameter("axSikki");
-	out.println("1-AX= \n"+apuan);
+	String apuan=request.getParameter("hadiAl");
+	out.println("A PUAN= \n"+apuan);
 	String aapuan=request.getParameter("axxSikki");
 	out.println("1-AXX="+aapuan);
 	
