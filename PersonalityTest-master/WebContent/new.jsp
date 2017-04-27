@@ -19,15 +19,8 @@ position:relative;
       <link href="css/style.css" rel="stylesheet"/>
   </head>
   <body >
-  <div class="page-header" style=" margin-left:30px; margin-right:30px;">
-<h1 style="20px; text-align:center;">Nasıl Birisin?</br>
-<small style="text-align:center;">Sizden sizin için yapılan analizi okuyup tavsiyelerimize uymanız beklenmektedir.</small>
-</h1>
-</div>
-
-<div class="panel panel-success" style=" margin-left:30px; margin-right:30px;">
-<div class="panel-heading">
-<%-- 
+  
+  <%-- 
 			<jsp:useBean class="degerlendirme.Yanitlar" id="ilkCekirdek" scope="session"></jsp:useBean>
 		
 			
@@ -41,8 +34,35 @@ position:relative;
 	
 	HttpSession oturum=request.getSession();
 
-	String apuan=request.getParameter("hadiAl");
-	out.println("A PUAN= \n"+apuan);
+	String sonuc=request.getParameter("hadiAl");
+	//int toplamPuan = Integer.parseInt(sonuc);
+	out.println("A PUAN= \n"+sonuc);
+	char[] anArray;
+	
+    // allocates memory for 10 integers
+    anArray = new char[3];
+	for(int i=0;anArray.length>i;i++){ 
+		
+		if(anArray[i]=='A'){
+			//Kırmızı renki kişiliğe ait etiket görünürhale gelsin
+			
+		}
+		else if(anArray[i]=='B'){
+			
+		}
+		else if(anArray[i]=='C'){
+			
+		}
+		else if(anArray[i]=='D'){
+			
+		}		
+		
+	}
+
+	
+	//if (toplamPuan==1){}
+	
+	/*
 	String aapuan=request.getParameter("axxSikki");
 	out.println("1-AXX="+aapuan);
 	
@@ -59,10 +79,38 @@ position:relative;
 	String Apuan=request.getParameter("axpuan");
 	
 	out.println("axpuan den gelen puan:"+Apuan);
+	*/
 	
 
-	
 %>
+<p id="jjDene" onclick="demoDisplay()"> Buraya tıkla kaybolsun</p>
+
+<script type="text/javascript">
+ 	var netice="Bellidegil";
+ 	//netice=sonuc;
+	
+
+	function demoDisplay() {
+		document.getElementById("jjDene").innerHTML=netice;
+    	//document.getElementById("myP1").style.display = "none";
+	}
+	if(karakter=='A'){
+		
+	}
+
+</script>
+  
+  <div class="page-header" style=" margin-left:30px; margin-right:30px;">
+<h1 style="20px; text-align:center;">Nasıl Birisin?</br>
+<small style="text-align:center;">Sizden sizin için yapılan analizi okuyup tavsiyelerimize uymanız beklenmektedir.</small>
+</h1>
+</div>
+
+<div class="YesilBolum" id="yesilAnaliz" > <!-- *****Burası Yeşil ile ilgili Analizin ve tavsiyelerin başlangıcı***** -->
+<div class="panel panel-success" style=" margin-left:30px; margin-right:30px;">
+<div class="panel-heading">
+
+
 
 <h3 class="panel-title">Yeşilim... & Analizim...</h3>
 </div>
@@ -115,6 +163,9 @@ Daha enerjik olmaya çalışın.
 </pre>
 <div class="show" style="margin-left:350px;width:500px;background-color:#ccc; text-align:center;">
  Bu test İnsan İlişkilerinde 4x4 lük iletişim adlı kitaptan alınmıştır </div>
+</div> <!-- *****Burası Yeşil ile ilgili Analizin ve tavsiyelerin sonu***** -->
+
+
 
 <div class="panel panel-info" style="margin-left:30px; margin-right:30px;">
 <div class="panel-heading">

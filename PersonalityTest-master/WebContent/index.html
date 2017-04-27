@@ -504,12 +504,19 @@ akşamki ruh haliniz nasıl olur?
 	<script>
 	var axpuan=0;
 	var axxpuan=0;
+	var toplamApuan=0;
 	var bxpuan=0;
 	var bxxpuan=0;
+	var toplamBpuan=0;
 	var cxpuan=0;
 	var cxxpuan=0;
+	var toplamCpuan=0;
 	var dxpuan=0;
 	var dxxpuan=0;
+	var toplamDpuan=0;
+	var toplampuan=0;
+	var gidenSecenek="NULL";
+	
 	
 		function hesaPuanAx(){
 			//bisey=documen.getElementById("secAx").value;
@@ -579,7 +586,37 @@ akşamki ruh haliniz nasıl olur?
 			this.cxxpuan=Cxxgelen;
 			this.dxpuan=Dxgelen;
 			this.dxxpuan=Dxxgelen;
-			document.getElementById("tekSonuc").value=axpuan+axxpuan+bxpuan+bxxpuan+cxpuan+cxxpuan+dxpuan+dxxpuan; //Buton submit yaptığında gönderilecek değer
+			
+			toplamApuan=this.axpuan+this.axxpuan;
+			toplamBpuan=this.bxpuan+this.bxxpuan;
+			toplamCpuan=this.cxpuan+this.cxxpuan;
+			toplamDpuan=this.dxpuan+this.dxxpuan;
+			
+			var puanlar=[toplamApuan,toplamBpuan,toplamCpuan,toplamDpuan];
+			puanlar.sort();
+			
+			if(puanlar[3]==toplamApuan){
+				gidenSecenek= toplamApuan + "A";
+				document.getElementById("tekSonuc").value= gidenSecenek;
+			}
+			else if(puanlar[3]==toplamBpuan){
+				gidenSecenek= toplamBpuan + "B";
+				document.getElementById("tekSonuc").value= gidenSecenek;
+			}
+			else if(puanlar[3]==toplamCpuan){
+				gidenSecenek= toplamCpuan + "C";
+				document.getElementById("tekSonuc").value= gidenSecenek;
+			}
+			else if(puanlar[3]==toplamDpuan){
+				gidenSecenek= toplamDpuan + "D";
+				document.getElementById("tekSonuc").value= gidenSecenek;
+			}
+			
+			
+			
+		
+			toplampuan=axpuan+axxpuan+bxpuan+bxxpuan+cxpuan+cxxpuan+dxpuan+dxxpuan;
+			//document.getElementById("tekSonuc").value=puanlar[3]; //Buton submit yaptığında gönderilecek değer
 		}
 		
 	</script>
