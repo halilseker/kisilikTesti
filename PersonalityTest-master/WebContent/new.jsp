@@ -3,12 +3,7 @@
    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-<style type="text/css">
-body{
-position:relative;
-}
 
-</style>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +12,25 @@ position:relative;
     <title>Kişilik Test Sonucu</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/style.css" rel="stylesheet"/>
+      
+      <style type="text/css">
+		body{
+		position:relative;
+		}
+		#maviAnaliz {
+    	display: none;
+		}
+		#kirmiziAnaliz {
+    	display: none;
+		}
+		#yesilAnaliz {
+    	display: none;
+		}
+		#sariAnaliz {
+    	display: none;
+		}
+		
+	</style>
   </head>
   <body >
   
@@ -37,27 +51,7 @@ position:relative;
 	String sonuc=request.getParameter("hadiAl");
 	//int toplamPuan = Integer.parseInt(sonuc);
 	out.println("A PUAN= \n"+sonuc);
-	char[] anArray;
-	
-    // allocates memory for 10 integers
-    anArray = new char[3];
-	for(int i=0;anArray.length>i;i++){ 
-		
-		if(anArray[i]=='A'){
-			//Kırmızı renki kişiliğe ait etiket görünürhale gelsin
-			
-		}
-		else if(anArray[i]=='B'){
-			
-		}
-		else if(anArray[i]=='C'){
-			
-		}
-		else if(anArray[i]=='D'){
-			
-		}		
-		
-	}
+
 
 	
 	//if (toplamPuan==1){}
@@ -83,30 +77,17 @@ position:relative;
 	
 
 %>
-<p id="jjDene" onclick="demoDisplay()"> Buraya tıkla kaybolsun</p>
+<p id="jjDene" > Buraya tıkla kaybolsun</p>
 
-<script type="text/javascript">
- 	var netice="Bellidegil";
- 	//netice=sonuc;
-	
 
-	function demoDisplay() {
-		document.getElementById("jjDene").innerHTML=netice;
-    	//document.getElementById("myP1").style.display = "none";
-	}
-	if(karakter=='A'){
-		
-	}
-
-</script>
   
-  <div class="page-header" style=" margin-left:30px; margin-right:30px;">
+<div class="page-header" style=" margin-left:30px; margin-right:30px;">
 <h1 style="20px; text-align:center;">Nasıl Birisin?</br>
 <small style="text-align:center;">Sizden sizin için yapılan analizi okuyup tavsiyelerimize uymanız beklenmektedir.</small>
 </h1>
 </div>
 
-<div class="YesilBolum" id="yesilAnaliz" > <!-- *****Burası Yeşil ile ilgili Analizin ve tavsiyelerin başlangıcı***** -->
+<div id="yesilAnaliz"  class="YesilBolum" > <!-- *****Burası Yeşil ile ilgili Analizin ve tavsiyelerin başlangıcı***** -->
 <div class="panel panel-success" style=" margin-left:30px; margin-right:30px;">
 <div class="panel-heading">
 
@@ -166,7 +147,7 @@ Daha enerjik olmaya çalışın.
 </div> <!-- *****Burası Yeşil ile ilgili Analizin ve tavsiyelerin sonu***** -->
 
 
-
+<div id="maviAnaliz" class="MaviBolum">
 <div class="panel panel-info" style="margin-left:30px; margin-right:30px;">
 <div class="panel-heading">
 <h3 class="panel-title">Maviyim... & Analizim...</h3>
@@ -217,7 +198,10 @@ Hayatın olumlu yönlerini görmeye çalışın. Küçük şeyleri dert etmeyin.
 </p>
 </p>
 </pre>
+
 <div class="show" style="margin-left:350px;width:500px;background-color:#ccc; text-align:center;"> Bu test İnsan İlişkilerinde 4x4 lük iletişim adlı kitaptan alınmıştır </div>
+</div>
+<div id="sariAnaliz"  class="SariBolum" >
 <div class="panel panel-warning" style="margin-left:30px; margin-right:30px;">
 <div class="panel-heading">
 <h3 class="panel-title">Sarıyım... & Analizim...</h3>
@@ -263,7 +247,9 @@ Hayatın olumlu yönlerini görmeye çalışın. Küçük şeyleri dert etmeyin.
 </pre>
 <div class="show" style="margin-left:350px;width:500px;background-color:#ccc; text-align:center;">
  Bu test İnsan İlişkilerinde 4x4 lük iletişim adlı kitaptan alınmıştır </div>
-
+ 
+ </div>
+<div id="kirmiziAnaliz"  class="KirmiziBolum" >
 <div class="panel panel-danger" style="margin-left:30px; margin-right:30px;">
 <div class="panel-heading">
 <h3 class="panel-title">Kırmızıyım... & Analizim...</h3>
@@ -317,6 +303,7 @@ Her zaman lider olamayacağınızı kabul edin.
 </pre>
 <div class="show" style="margin-left:350px;width:500px;background-color:#ccc; text-align:center;">
  Bu test İnsan İlişkilerinde 4x4 lük iletişim adlı kitaptan alınmıştır</div>
+</div> 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -330,6 +317,33 @@ Her zaman lider olamayacağınızı kabul edin.
     	});
     });
     </script>
+    <script type="text/javascript">
+ 	var netice="Bellidegil";
+ 	var sonucDizi=['Y','X'];
+ 	sonucDizi="<%=sonuc%>"; //JSP den gelen değişleşkeni işledim.
+ 	var gorunurluk= "inherit";
+
+	 	for(var i=0; sonucDizi.length>i;i++){
+	 		
+			if(sonucDizi[i]=='A'){
+				//Kırmızı renki kişiliğe ait etiket görünürhale gelsin
+				//document.getElementById("yesilAnaliz").style.visibility = "hidden";
+				document.getElementById("kirmiziAnaliz").style.display = "inherit";
+			}
+			else if(sonucDizi[i]=='B'){
+				document.getElementById("sariAnaliz").style.display = "inherit";
+				
+			}
+			else if(sonucDizi[i]=='C'){
+				document.getElementById("yesilAnaliz").style.display = "inherit";
+			}
+			else if(sonucDizi[i]=='D'){
+				document.getElementById("maviAnaliz").style.display = "inherit";
+			}
+	 		
+	 	}
+	 	
+</script>
   </body>
 </html>
 

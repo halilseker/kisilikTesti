@@ -593,7 +593,9 @@ akşamki ruh haliniz nasıl olur?
 			toplamDpuan=this.dxpuan+this.dxxpuan;
 			
 			var puanlar=[toplamApuan,toplamBpuan,toplamCpuan,toplamDpuan];
-			puanlar.sort();
+			//puanlar.sort();//Diziye gelen verileri string olarak sıraladığından iki basamaklı sayılar yazdığımda her birini ayrı bir karakter olarak alıp yanlış sıralamaya neden oluyor.
+			puanlar.sort(function(a, b){return a - b});//Sayı olarak sıralayan metod
+
 			
 			if(puanlar[3]==toplamApuan){
 				gidenSecenek= toplamApuan + "A";
@@ -612,9 +614,6 @@ akşamki ruh haliniz nasıl olur?
 				document.getElementById("tekSonuc").value= gidenSecenek;
 			}
 			
-			
-			
-		
 			toplampuan=axpuan+axxpuan+bxpuan+bxxpuan+cxpuan+cxxpuan+dxpuan+dxxpuan;
 			//document.getElementById("tekSonuc").value=puanlar[3]; //Buton submit yaptığında gönderilecek değer
 		}
